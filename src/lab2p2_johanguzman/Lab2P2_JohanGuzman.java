@@ -30,9 +30,9 @@ public class Lab2P2_JohanGuzman {
                     + "1.Agregar Ciudad \n"
                     + "2. Agregar Superheroe \n"
                     + "3. Listar \n"
-                    + "4. Historial"
+                    + "4. Historial \n"
                     + "5. Modificar Villano\n"
-                    + "6. Eliminar Ciudad"
+                    + "6. Eliminar Ciudad \n"
                     + "7. Eliminar SuperHeroe \n"
                     + "8.Simulacion \n"
                     + "9. Salir");
@@ -54,7 +54,7 @@ public class Lab2P2_JohanGuzman {
                             + "3. Listar Historial \n"
                             + "4. Salir");
                     int opt2=sc.nextInt();
-                    switch(opt){
+                    switch(opt2){
                         case 1:
                             ListarCiudades(ciudad);opt=0;
                             break;
