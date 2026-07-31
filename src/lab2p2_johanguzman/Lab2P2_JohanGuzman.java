@@ -77,7 +77,10 @@ public class Lab2P2_JohanGuzman {
                 case 6:
                     EliminarSuperHeroe(superheroe);opt=0;
                     break;
-                case 7: 
+                case 7:
+                    ListarHistorial(historial);opt=0;
+                    break;
+                case 8: 
                     Simulacion(ciudad,superheroe,historial);opt=0;
                     break;
             }
@@ -198,6 +201,7 @@ public class Lab2P2_JohanGuzman {
         
         
         SuperHeroe p1=new SuperHeroe(id,apodo,nombre,descrip,vuelo,rHabilidades,nPoder);
+        superheroe.add(p1);
     }
     public static void ListarCiudades(ArrayList<Ciudad> ciudad){
         String temp="";
@@ -303,9 +307,29 @@ public class Lab2P2_JohanGuzman {
         ListarSuperHeroes(superheroe);
         String suceso="";
         System.out.println("Ingrese el Id de la ciudad del Enfrentamiento: ");
-        int nCiudad=sc.nextInt();
+        int idCiudad=sc.nextInt();
         System.out.println("Ingrese Id del Super Heroe: ");
-        int nSH=sc.nextInt();
+        int idSH=sc.nextInt();
+        int nCiudad=-1;
+        for(int x=0;x<ciudad.size();x++){
+            if(idCiudad==ciudad.get(x).getId()){
+                nCiudad=x;
+            }
+        }
+
+        
+        int nSH=-1;
+        for(int x=0;x<superheroe.size();x++){
+            if(idSH==superheroe.get(x).getId()){
+                nSH=x;
+            }
+        }
+    
+        
+        if(nCiudad==-1 || nSH==-1){
+            System.out.println("ID de ciudad o superheroe no encontrado");
+            return;
+        }
         
         if(superheroe.get(nSH).getnPoder()>ciudad.get(nCiudad).getnVillano()){
             suceso="Fue derrotado por: ";
