@@ -9,13 +9,13 @@ package lab2p2_johanguzman;
  * @author DELL
  */
 public class Ciudad {
-    int id;String nombre;int vuelo;String villano;double nVillano;
+    int id;String nombre;boolean vuelo;String villano;double nVillano;
 
     
     public Ciudad(){
         
     }
-    public Ciudad(int id,String nombre,int vuelo,String villano,double nVillano){
+    public Ciudad(int id,String nombre,boolean vuelo,String villano,double nVillano){
         this.id=id;this.nombre=nombre;this.vuelo=vuelo;this.villano=villano;this.nVillano=nVillano;
     }
     public int getId() {
@@ -34,11 +34,11 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
-    public int getVuelo() {
+    public boolean getVuelo() {
         return vuelo;
     }
 
-    public void setVuelo(int vuelo) {
+    public void setVuelo(boolean vuelo) {
         this.vuelo = vuelo;
     }
 
